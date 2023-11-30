@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo JavaScript com Try-Catch-Finally</title>
+</head>
+<body>
+
+    <script>
+        try {
+            // Solicita ao usuário que forneça dois números
+            let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+            let numero2 = parseFloat(prompt("Digite o segundo número:"));
+
+            // Verifica se o segundo número é zero antes de realizar a divisão
+            if (numero2 === 0) {
+                throw new Error("Divisão por zero não é permitida.");
+            }
+
+            // Realiza a operação arriscada (divisão por zero neste caso)
+            let resultado = numero1 / numero2;
+
+            // Exibe o resultado
+            console.log("Resultado da operação:", resultado);
+
+        } catch (excecao) {
+            // Captura e trata a exceção
+            console.error("Ocorreu um erro:", excecao.message);
+
+        } finally {
+            // Bloco opcional que é sempre executado, independentemente de ocorrer uma exceção ou não
+            console.log("Finalizando o bloco try-catch-finally.");
+        }
+    </script>
+
+</body>
+</html>
+
